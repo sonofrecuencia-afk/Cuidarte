@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CuidArte · Bienestar para comunidades educativas | Sonofrecuencia</title>
+<meta name="description" content="Capacitación vivencial de bienestar y gestión emocional para docentes, educadoras y equipos educativos. Jornadas de 4 o 7 horas en todo Chile, financiables vía SENCE.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CuidArte · Bienestar para comunidades educativas">
+<meta property="og:description" content="Capacitación vivencial de 4 o 7 horas en bienestar y gestión emocional. Financiable vía SENCE. +800 personas certificadas.">
+<meta property="og:image" content="https://sonofrecuencia-afk.github.io/cuidarte/img/og.jpg">
+<meta property="og:url" content="https://sonofrecuencia-afk.github.io/cuidarte/">
+<link rel="icon" href="img/logo_color.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#13301e; --green:#2b5a35; --sage:#dfe6d6; --cream:#f8f4ec;
+    --gold:#a8844b; --gold-soft:#d9c39a; --ink:#1c241e; --muted:#5b655d; --line:#ddd2bd;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  html{ scroll-behavior:smooth }
+  body{ font-family:var(--sans); color:var(--ink); background:var(--cream); font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased }
+  img{ display:block; max-width:100% }
+  a{ color:inherit }
+  .wrap{ width:min(1120px, 100% - 32px); margin-inline:auto }
+  section{ padding:88px 0 }
+  .eyebrow{ font-size:12px; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); font-weight:600 }
+  h1,h2,h3{ font-family:var(--serif); font-weight:500; line-height:1.08; color:var(--forest) }
+  h2{ font-size:clamp(34px, 5vw, 52px); margin:10px 0 20px }
+  h2 em, h1 em{ font-style:italic; color:var(--green) }
+  h3{ font-size:24px; margin-bottom:6px }
+  .lead{ font-family:var(--serif); font-size:clamp(20px, 2.4vw, 24px); line-height:1.45; max-width:760px }
+  .muted{ color:var(--muted) }
+  strong{ font-weight:600; color:var(--forest) }
+  .card{ background:#fff; border:1px solid var(--line); border-radius:12px; padding:24px }
+  .grid{ display:grid; gap:18px }
+  .g2{ grid-template-columns:repeat(2, 1fr) } .g3{ grid-template-columns:repeat(3, 1fr) } .g4{ grid-template-columns:repeat(4, 1fr) }
+  .btn{ display:inline-flex; align-items:center; gap:10px; padding:15px 26px; border-radius:40px; font-weight:600; font-size:15px; text-decoration:none; transition:transform .15s, background .15s }
+  .btn:hover{ transform:translateY(-1px) }
+  .btn-gold{ background:var(--gold-soft); color:var(--forest) }
+  .btn-gold:hover{ background:#e6d3ae }
+  .btn-line{ border:1.5px solid rgba(255,255,255,.6); color:#fff }
+  .btn-line:hover{ background:rgba(255,255,255,.1) }
+  .dark{ background:var(--forest); color:#e9efe5 }
+  .dark h2,.dark h3{ color:#fff } .dark h2 em{ color:var(--gold-soft) } .dark strong{ color:#fff }
+  .dark .muted{ color:rgba(233,239,229,.75) }
+
+  /* nav */
+  .nav{ position:absolute; top:0; left:0; right:0; z-index:5; padding:22px 0 }
+  .nav .wrap{ display:flex; justify-content:space-between; align-items:center; gap:16px }
+  .nav img{ width:210px }
+  .nav a.mini{ color:#fff; font-size:13px; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--gold-soft); padding-bottom:2px }
+
+  /* hero */
+  .hero{ position:relative; min-height:min(100vh, 880px); min-height:min(100svh, 880px); display:flex; align-items:flex-end; color:#fff; padding:140px 0 64px; overflow:hidden }
+  .hero > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover }
+  .hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,30,18,.7) 0%, rgba(10,30,18,.25) 35%, rgba(10,30,18,.55) 60%, #0d2416 100%) }
+  .hero .wrap{ position:relative; z-index:2 }
+  .hero .eyebrow{ color:var(--gold-soft) }
+  .hero h1{ color:#fff; font-size:clamp(64px, 12vw, 128px); font-weight:400; margin:10px 0 12px; letter-spacing:-.01em }
+  .hero h1 em{ color:var(--gold-soft) }
+  .hero p.sub{ font-family:var(--serif); font-size:clamp(21px, 2.6vw, 28px); max-width:680px; line-height:1.35; color:rgba(255,255,255,.92) }
+  .hero .ctas{ display:flex; flex-wrap:wrap; gap:12px; margin-top:30px }
+  .facts{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-top:44px; padding-top:24px; border-top:1px solid rgba(255,255,255,.25); font-size:14px; color:rgba(255,255,255,.82) }
+  .facts b{ display:block; font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:4px }
+  .wave{ display:flex; align-items:center; gap:2px; height:34px; margin-top:26px; max-width:520px }
+  .wave i{ display:block; flex:1; max-width:2px; background:var(--gold-soft); border-radius:1px; opacity:.85 }
+
+  /* why */
+  .split{ display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center }
+  .split img{ border-radius:12px; width:100%; aspect-ratio:4/3; object-fit:cover }
+  .ben .card h3{ font-size:22px } .ben .card p{ font-size:14px; color:var(--muted) }
+  .note{ background:var(--sage); border-radius:12px; padding:18px 22px; margin-top:26px; font-size:15px; color:var(--forest) }
+
+  /* program */
+  .fmt{ background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden }
+  .fmt .hd{ background:var(--forest); color:#fff; padding:22px 24px; display:flex; justify-content:space-between; align-items:baseline; gap:12px }
+  .fmt .hd h3{ color:#fff; margin:0 }
+  .fmt .hd small{ display:block; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-soft); margin-top:4px }
+  .fmt .hd span{ font-family:var(--serif); font-size:42px; color:var(--gold-soft); line-height:1; white-space:nowrap }
+  .fmt ul{ list-style:none; padding:8px 24px 16px }
+  .fmt li{ display:grid; grid-template-columns:76px 1fr; gap:10px; padding:11px 0; border-bottom:1px solid var(--line); font-size:14.5px; line-height:1.45 }
+  .fmt li:last-child{ border-bottom:0 }
+  .fmt li i{ font-style:normal; color:var(--gold); font-weight:600; font-size:13px }
+  .fmt li.br{ color:var(--muted); font-style:italic }
+  .incl .card{ border-top:3px solid var(--green) }
+  .incl p{ font-size:14.5px; color:var(--muted) }
+  .addon{ display:grid; grid-template-columns:320px 1fr; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-top:18px }
+  .addon img{ width:100%; height:100%; min-height:220px; object-fit:cover }
+  .addon div{ padding:26px 28px }
+  .tag{ font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); font-weight:600 }
+
+  /* extras */
+  .pk{ background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden }
+  .pk img{ width:100%; aspect-ratio:16/10; object-fit:cover }
+  .pk div{ padding:24px }
+  .pk p{ font-size:15px; color:var(--muted) }
+
+  /* experience */
+  .prof{ display:grid; grid-template-columns:340px 1fr; gap:48px; align-items:start }
+  .prof img{ border-radius:12px; aspect-ratio:3/4; object-fit:cover; width:100% }
+  .creds{ list-style:none; columns:2; column-gap:28px; margin-top:22px }
+  .creds li{ break-inside:avoid; padding:10px 0; border-bottom:1px solid var(--line); font-size:14.5px; line-height:1.4 }
+  .creds li span{ display:block; color:var(--muted); font-size:13px }
+  .big{ background:var(--forest); color:#fff; border-radius:12px; padding:28px }
+  .big .num{ font-family:var(--serif); font-size:64px; color:var(--gold-soft); line-height:1 }
+  .big p{ color:rgba(255,255,255,.82); font-size:15px }
+  .orgs{ display:grid; grid-template-columns:repeat(3, 1fr); gap:6px 22px; margin-top:12px }
+  .orgs span{ font-family:var(--serif); font-size:19px; font-weight:600; color:var(--forest); padding:8px 0; border-bottom:1px solid var(--line); line-height:1.2 }
+  .exp2{ grid-template-columns:minmax(0,1fr) minmax(0,2fr) }
+  .kpis .num{ font-family:var(--serif); font-size:46px; color:var(--gold); line-height:1 }
+  .kpis p{ font-size:14px; color:var(--muted); margin-top:6px }
+
+  /* hire */
+  .opt{ border:1px solid rgba(255,255,255,.2); border-radius:12px; padding:26px; background:rgba(255,255,255,.04) }
+  .opt .tag{ color:var(--gold-soft) }
+  .opt h3{ margin:8px 0 8px }
+  .opt p{ font-size:15px; color:rgba(233,239,229,.82) }
+  .gift{ margin-top:22px; border:1px solid var(--gold-soft); border-radius:12px; padding:30px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; background:rgba(217,195,154,.08) }
+  .gift h3{ color:var(--gold-soft); font-size:30px }
+  .gift p{ color:rgba(255,255,255,.86); margin-top:6px }
+  .steps{ display:grid; grid-template-columns:repeat(4, 1fr); gap:22px; margin-top:40px }
+  .steps .n{ width:40px; height:40px; border-radius:50%; border:1.5px solid var(--gold-soft); color:var(--gold-soft); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:20px; margin-bottom:12px }
+  .steps b{ display:block; font-family:var(--serif); font-size:22px; font-weight:500; color:#fff }
+  .steps p{ font-size:14.5px; color:rgba(233,239,229,.75) }
+
+  /* contact */
+  .contact{ text-align:center }
+  .contact .lead{ margin:0 auto }
+  .contact .ctas{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:30px }
+  .contact .btn-line{ border-color:var(--forest); color:var(--forest) }
+  .contact .btn-line:hover{ background:var(--sage) }
+  .clist{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px 34px; margin-top:34px; font-size:15px; color:var(--muted) }
+  .clist a{ text-decoration:none; border-bottom:1px solid var(--gold-soft) }
+  footer{ background:var(--forest); color:rgba(255,255,255,.6); padding:34px 0; font-size:13px }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap }
+  footer img{ width:190px }
+  .fine{ font-size:13px; color:var(--muted); margin-top:18px }
+
+  @media (max-width: 900px){
+    section{ padding:64px 0 }
+    .g3,.g4{ grid-template-columns:1fr 1fr }
+    .split,.prof{ grid-template-columns:1fr; gap:28px }
+    .prof img{ max-width:320px; aspect-ratio:1; }
+    .addon{ grid-template-columns:1fr }
+    .exp2{ grid-template-columns:1fr }
+    .steps{ grid-template-columns:1fr 1fr }
+  }
+  @media (max-width: 620px){
+    body{ font-size:15.5px }
+    .g2,.g3,.g4{ grid-template-columns:1fr }
+    .facts{ grid-template-columns:1fr; gap:14px; margin-top:30px }
+    .nav img{ width:160px }
+    .nav a.mini{ display:none }
+    .creds{ columns:1 }
+    .orgs{ grid-template-columns:1fr 1fr }
+    .gift{ grid-template-columns:1fr }
+    .steps{ grid-template-columns:1fr }
+    .btn{ width:100%; justify-content:center }
+    .fmt li{ grid-template-columns:64px 1fr }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <img src="img/logo_blanco.png" alt="Sonofrecuencia · Musicoterapia Vibroacústica">
+    <a class="mini" href="#contacto">Agendar conversación</a>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="img/hero.jpg" alt="Jornada CuidArte con cuencos tibetanos y globos">
+  <div class="wrap">
+    <div class="eyebrow">Bienestar y gestión emocional · Financiable vía SENCE</div>
+    <h1>Cuid<em>Arte</em></h1>
+    <p class="sub">Un viaje sonoro, corporal y musical hacia el bienestar de las comunidades educativas.</p>
+    <div class="wave" data-bars="110"></div>
+    <div class="ctas">
+      <a class="btn btn-gold" href="#contacto">Solicitar experiencia demostrativa</a>
+      <a class="btn btn-line" href="Brochure_CuidArte.pdf" download>Descargar brochure (PDF)</a>
+    </div>
+    <div class="facts">
+      <div><b>Para</b>Docentes, educadoras, asistentes de la educación y equipos directivos</div>
+      <div><b>Formato</b>Jornadas presenciales de 4 o 7 horas, en todo Chile</div>
+      <div><b>Incluye</b>Aula virtual con material descargable y certificado de participación</div>
+    </div>
+  </div>
+</section>
+
+<section id="por-que">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow">Por qué CuidArte</div>
+        <h2>Cuidar a quienes <em>educan</em></h2>
+        <p class="lead">Cuando el equipo está bien, se nota en el aula. Un equipo que se cuida comunica mejor, convive mejor y sostiene con más energía el trabajo con niños, niñas, jóvenes y familias.</p>
+      </div>
+      <img src="img/grupo.jpg" alt="Equipo participante de una jornada CuidArte" loading="lazy">
+    </div>
+    <div class="grid g2" style="margin-top:40px">
+      <p>La labor educativa tiene una alta carga emocional: jornadas extensas, situaciones de convivencia complejas y la responsabilidad diaria de acompañar a otros. <strong>CuidArte</strong> es una capacitación vivencial que entrega herramientas concretas de gestión emocional y autocuidado, aplicables desde el día siguiente.</p>
+      <p>Integra <strong>musicoterapia, ludoterapia, atención plena, movimiento consciente y artes expresivas</strong>. No es una charla: el equipo juega, toca instrumentos, se mueve, crea y se detiene a escucharse. No se requieren conocimientos previos y todo el equipamiento está incluido.</p>
+    </div>
+    <div class="grid g4 ben" style="margin-top:32px">
+      <div class="card"><h3>Autoconocimiento</h3><p>Mayor conciencia de los estados internos y las necesidades personales.</p></div>
+      <div class="card"><h3>Regulación emocional</h3><p>Herramientas para gestionar el estrés y las emociones difíciles.</p></div>
+      <div class="card"><h3>Creatividad</h3><p>Recursos expresivos para el bienestar y para el aula.</p></div>
+      <div class="card"><h3>Clima laboral</h3><p>Vínculos más sanos, comunicación empática y sentido de equipo.</p></div>
+    </div>
+    <div class="note">Complementa las acciones de <strong>buen trato y bienestar laboral</strong> que promueve la Ley Karin, y fortalece la <strong>convivencia escolar</strong> desde el cuidado de los adultos de la comunidad.</div>
+  </div>
+</section>
+
+<section id="programa" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow">Programa</div>
+    <h2>Dos formatos, <em>una misma experiencia</em></h2>
+    <div class="grid g2">
+      <div class="fmt">
+        <div class="hd"><div><h3>Media jornada</h3><small>Ideal para consejos de profesores</small></div><span>4 h</span></div>
+        <ul>
+          <li><i>15 min</i>Bienvenida y acuerdos para un espacio seguro</li>
+          <li><i>80 min</i><span><strong>Ludoterapia musical:</strong> juegos sonoros y rítmicos que despiertan alegría y conexión</span></li>
+          <li class="br"><i>15 min</i>Pausa</li>
+          <li><i>50 min</i><span><strong>Movimiento expresivo consciente:</strong> respiración, atención plena y cuerpo</span></li>
+          <li><i>75 min</i><span><strong>Artes expresivas y baño sonoro:</strong> improvisación, cuencos y cierre reflexivo</span></li>
+        </ul>
+      </div>
+      <div class="fmt">
+        <div class="hd"><div><h3>Jornada completa</h3><small>Ideal para jornadas de autocuidado</small></div><span>7 h</span></div>
+        <ul>
+          <li><i>15 min</i>Bienvenida y acuerdos para un espacio seguro</li>
+          <li><i>90 min</i><span><strong>Ludoterapia musical</strong> para el bienestar</span></li>
+          <li><i>120 min</i><span><strong>Movimiento expresivo consciente:</strong> yoga suave, respiración y mindfulness</span></li>
+          <li class="br"><i>60 min</i>Almuerzo</li>
+          <li><i>90 min</i><span><strong>Artes expresivas:</strong> cuentos y paisajes sonoros, creación colectiva</span></li>
+          <li><i>65 min</i><span><strong>Expresión plástica:</strong> mural colectivo de las emociones, compromisos y evaluación</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid g3 incl" style="margin-top:18px">
+      <div class="card"><h3>Equipamiento incluido</h3><p>Instrumentos musicales de fácil ejecución y set de cuencos tibetanos y de cuarzo.</p></div>
+      <div class="card"><h3>Aula virtual</h3><p>Acceso a academia.sonofrecuencia.cl con material descargable y prácticas para continuar en casa.</p></div>
+      <div class="card"><h3>Certificado e informe</h3><p>Certificado de participación e informe final de la actividad para el establecimiento.</p></div>
+    </div>
+    <div class="addon">
+      <img src="img/risoterapia.jpg" alt="Sesión de risoterapia" loading="lazy">
+      <div>
+        <span class="tag">Complemento opcional</span>
+        <h3 style="margin-top:6px">Risoterapia · 30 minutos</h3>
+        <p class="muted">La jornada puede sumar una sesión de risoterapia a cargo de un profesional especialista: ejercicios prácticos para reír, liberar tensiones y fortalecer el ánimo del equipo. Se cotiza por separado.</p>
+      </div>
+    </div>
+    <p class="fine"><strong>Requisitos:</strong> sala amplia y silenciosa sin sillas fijas, colchonetas o mats, y equipo de sonido. Grupos ideales de hasta 20 personas; es posible trabajar con grupos de hasta 30.</p>
+  </div>
+</section>
+
+<section id="experiencias">
+  <div class="wrap">
+    <div class="eyebrow">Experiencias complementarias</div>
+    <h2>Más experiencias para <em>toda la comunidad</em></h2>
+    <p class="lead" style="margin-bottom:30px">Además de CuidArte, podemos sumar experiencias para los equipos, los niños y las familias, el mismo día de la capacitación o en otra fecha.</p>
+    <div class="grid g2">
+      <div class="pk"><img src="img/concierto.jpg" alt="Concierto interactivo para niños" loading="lazy"><div><span class="tag">Para los más pequeños</span><h3 style="margin-top:6px">Concierto interactivo</h3><p>La banda invita a niños, niñas y familias a cantar, tocar, moverse y jugar. Ideal para jardines infantiles, celebraciones y cierres de año.</p></div></div>
+      <div class="pk"><img src="img/teatro.jpg" alt="Obra de teatro-capacitación" loading="lazy" style="object-position:50% 55%"><div><span class="tag">Para los equipos</span><h3 style="margin-top:6px">Teatro-capacitación</h3><p>Una obra de teatro con contenido creado a la medida de su institución, por ejemplo sobre Ley Karin, inclusión, buen trato o convivencia. Puede presentarse después de la capacitación o en otra fecha.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="prof">
+      <img src="img/perfil.jpg" alt="Reinaldo Farías Serey con un cuenco tibetano" loading="lazy">
+      <div>
+        <div class="eyebrow">Relator</div>
+        <h2 style="margin-bottom:6px">Reinaldo Farías Serey</h2>
+        <p class="tag" style="color:var(--green)">Fundador de Sonofrecuencia · Musicoterapeuta · Magíster en Docencia Universitaria</p>
+        <p class="lead" style="margin-top:18px">Más de quince años acompañando a comunidades educativas, equipos profesionales y organizaciones en procesos de bienestar, gestión emocional y cohesión de equipos.</p>
+        <ul class="creds">
+          <li>Postítulo en Arte Terapias, mención Musicoterapia<span>Universidad de Chile</span></li>
+          <li>Magíster en Docencia Universitaria<span>Universidad SEK</span></li>
+          <li>Licenciatura y Pedagogía en Educación Musical<span>Universidad de Concepción</span></li>
+          <li>Tramo Experto II, Desarrollo Profesional Docente<span>CPEIP</span></li>
+          <li>Docente universitario<span>USEK, USS y UMCE · 2015 – actualidad</span></li>
+          <li>Relator de bienestar y gestión emocional<span>OTEC y fundaciones · 2018 – actualidad</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid exp2" style="margin-top:44px">
+      <div class="big"><div class="num">+800</div><h3>personas certificadas</h3><p>En capacitaciones de bienestar y gestión emocional, a través de OTEC Cree Capacitaciones y Fundación Honra.</p></div>
+      <div class="card">
+        <span class="tag">Han vivido la experiencia</span>
+        <div class="orgs">
+          <span>INACAP Rancagua</span><span>INACAP Renca</span><span>Mutual de Seguridad</span>
+          <span>Aldeas Infantiles SOS</span><span>Fundación María de la Luz</span><span>Fundación Casa de Luz</span>
+          <span>CORPALIV · U. Mayor</span><span>Universidad SEK</span><span>Punto de Cultura Plaza Bogotá</span>
+        </div>
+        <p class="muted" style="font-size:14px;margin-top:10px">entre otras instituciones.</p>
+      </div>
+    </div>
+    <div class="grid g3 kpis" style="margin-top:28px">
+      <div><div class="num">+16</div><p>años de experiencia en educación y comunidad</p></div>
+      <div><div class="num">+1.800</div><p>personas beneficiadas en proyectos, capacitaciones y docencia</p></div>
+      <div><div class="num">8</div><p>proyectos adjudicados con fondos públicos</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="contratar">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold-soft)">Cómo contratar</div>
+    <h2>Financiamiento <em>flexible</em></h2>
+    <p class="lead muted" style="margin-bottom:30px">Cada jornada se cotiza a la medida de su establecimiento: número de participantes, formato y ubicación.</p>
+    <div class="grid g3">
+      <div class="opt"><span class="tag">Opción 1</span><h3>Vía SENCE</h3><p>Financiable a través de la franquicia tributaria SENCE, mediante OTEC asociada.</p></div>
+      <div class="opt"><span class="tag">Opción 2</span><h3>Contratación directa</h3><p>Con factura exenta de Sonofrecuencia.</p></div>
+      <div class="opt"><span class="tag">Establecimientos subvencionados</span><h3>Plan de mejoramiento</h3><p>Puede incorporarse como acción de bienestar y convivencia en su PME.</p></div>
+    </div>
+    <div class="gift">
+      <div><h3>Experiencia demostrativa para el equipo directivo</h3><p>Antes de decidir, invitamos al equipo directivo a vivir 45 minutos de CuidArte: presencial en la Región Metropolitana u online en regiones.</p></div>
+      <a class="btn btn-gold" href="#contacto">Sin costo · Solicitar</a>
+    </div>
+    <div class="steps">
+      <div><div class="n">1</div><b>Conversación</b><p>Conocemos al equipo y sus necesidades.</p></div>
+      <div><div class="n">2</div><b>Cotización</b><p>Propuesta a la medida en 48 horas.</p></div>
+      <div><div class="n">3</div><b>Coordinación</b><p>Fecha, espacio y, si aplica, inscripción SENCE.</p></div>
+      <div><div class="n">4</div><b>Jornada e informe</b><p>Ejecución, certificados e informe final.</p></div>
+    </div>
+    <p class="fine" style="color:rgba(255,255,255,.55)">Jornadas en todo Chile; fuera de la Región Metropolitana se cotizan traslado y viático. El financiamiento vía SENCE está sujeto a los requisitos de la franquicia tributaria.</p>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="eyebrow">Contacto</div>
+    <h2>Conversemos sobre <em>su equipo</em></h2>
+    <p class="lead">Escríbanos para coordinar la experiencia demostrativa o recibir una cotización a la medida.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" style="background:var(--forest);color:#fff" href="mailto:contacto@sonofrecuencia.cl?subject=CuidArte%20-%20Solicitud%20de%20informaci%C3%B3n">Escribir a contacto@sonofrecuencia.cl</a>
+      <a class="btn btn-line" href="https://wa.me/56979913929?text=Hola%20Reinaldo%2C%20me%20interesa%20CuidArte%20para%20nuestro%20equipo." target="_blank" rel="noopener">WhatsApp +56 9 7991 3929</a>
+    </div>
+    <div class="clist">
+      <a href="https://sonofrecuencia.cl" target="_blank" rel="noopener">sonofrecuencia.cl</a>
+      <a href="https://academia.sonofrecuencia.cl" target="_blank" rel="noopener">academia.sonofrecuencia.cl</a>
+      <a href="https://www.instagram.com/sonofrecuencia_musicoterapia/" target="_blank" rel="noopener">@sonofrecuencia_musicoterapia</a>
+      <a href="Brochure_CuidArte.pdf" download>Brochure en PDF</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo_blanco.png" alt="Sonofrecuencia">
+    <span>“Porque cuidar de otros comienza por aprender a cuidarnos.”</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.wave').forEach(function (el, k) {
+    var n = +el.dataset.bars || 100, seed = 11 + k * 7;
+    function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    for (var i = 0; i < n; i++) {
+      var x = i / (n - 1), env = Math.pow(Math.sin(Math.PI * x), 1.6);
+      var b = document.createElement('i'); b.style.height = (6 + 94 * env * (0.35 + 0.65 * rnd())) + '%'; el.appendChild(b);
+    }
+  });
+</script>
+</body>
+</html>
