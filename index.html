@@ -75,6 +75,9 @@
   .ben .card h3{ font-size:22px } .ben .card p{ font-size:14px; color:var(--muted) }
   .note{ background:var(--sage); border-radius:12px; padding:18px 22px; margin-top:26px; font-size:15px; color:var(--forest) }
 
+  .video{ position:relative; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#000; box-shadow:0 20px 60px rgba(0,0,0,.35) }
+  .video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0 }
+
   /* program */
   .fmt{ background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden }
   .fmt .hd{ background:var(--forest); color:#fff; padding:22px 24px; display:flex; justify-content:space-between; align-items:baseline; gap:12px }
@@ -182,6 +185,7 @@
     <div class="wave" data-bars="110"></div>
     <div class="ctas">
       <a class="btn btn-gold" href="#contacto">Solicitar experiencia demostrativa</a>
+      <a class="btn btn-line" href="#video">▶ Ver video</a>
       <a class="btn btn-line" href="Brochure_CuidArte.pdf" download>Descargar brochure (PDF)</a>
     </div>
     <div class="facts">
@@ -213,6 +217,15 @@
       <div class="card"><h3>Clima laboral</h3><p>Vínculos más sanos, comunicación empática y sentido de equipo.</p></div>
     </div>
     <div class="note">Complementa las acciones de <strong>buen trato y bienestar laboral</strong> que promueve la Ley Karin, y fortalece la <strong>convivencia escolar</strong> desde el cuidado de los adultos de la comunidad.</div>
+  </div>
+</section>
+
+<section id="video" class="dark" style="padding:72px 0">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold-soft)">Véalo en acción</div>
+    <h2>Así se vive <em>CuidArte</em></h2>
+    <p class="lead muted" style="margin-bottom:28px">Fragmentos de jornadas reales con equipos educativos y profesionales.</p>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/ONLOu6kytRs?rel=0" title="CuidArte · Bienestar y autocuidado para comunidades educativas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
   </div>
 </section>
 
