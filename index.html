@@ -52,7 +52,11 @@
   .nav{ position:absolute; top:0; left:0; right:0; z-index:5; padding:22px 0 }
   .nav .wrap{ display:flex; justify-content:space-between; align-items:center; gap:16px }
   .nav img{ width:210px }
-  .nav a.mini{ color:#fff; font-size:13px; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--gold-soft); padding-bottom:2px }
+  .acts{ display:flex; gap:10px }
+  .hbtn{ display:inline-flex; align-items:center; gap:6px; padding:9px 18px; border-radius:30px; font-size:13.5px; font-weight:600; text-decoration:none; color:#fff; border:1.5px solid rgba(255,255,255,.55); transition:background .15s }
+  .hbtn:hover{ background:rgba(255,255,255,.12) }
+  .hbtn.solid{ background:var(--gold-soft); border-color:var(--gold-soft); color:var(--forest) }
+  .hbtn.solid:hover{ background:#e6d3ae }
 
   /* hero */
   .hero{ position:relative; min-height:min(100vh, 880px); min-height:min(100svh, 880px); display:flex; align-items:flex-end; color:#fff; padding:140px 0 64px; overflow:hidden }
@@ -89,6 +93,11 @@
   .fmt li:last-child{ border-bottom:0 }
   .fmt li i{ font-style:normal; color:var(--gold); font-weight:600; font-size:13px }
   .fmt li.br{ color:var(--muted); font-style:italic }
+  .fmt li b{ display:block; font-weight:600; color:var(--forest); margin-bottom:2px }
+  .fmt li em{ display:block; font-style:normal; color:var(--green); font-size:13.5px; margin-top:4px }
+  .obj{ display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:start; margin-bottom:34px }
+  .obj ol{ margin:10px 0 0 20px; font-size:15px; color:var(--ink) }
+  .obj li{ padding:3px 0 3px 4px }
   .incl .card{ border-top:3px solid var(--green) }
   .incl p{ font-size:14.5px; color:var(--muted) }
   .addon{ display:grid; grid-template-columns:320px 1fr; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-top:18px }
@@ -146,7 +155,7 @@
   @media (max-width: 900px){
     section{ padding:64px 0 }
     .g3,.g4{ grid-template-columns:1fr 1fr }
-    .split,.prof{ grid-template-columns:1fr; gap:28px }
+    .split,.prof,.obj{ grid-template-columns:1fr; gap:28px }
     .prof img{ max-width:320px; aspect-ratio:1; }
     .addon{ grid-template-columns:1fr }
     .exp2{ grid-template-columns:1fr }
@@ -157,7 +166,8 @@
     .g2,.g3,.g4{ grid-template-columns:1fr }
     .facts{ grid-template-columns:1fr; gap:14px; margin-top:30px }
     .nav img{ width:160px }
-    .nav a.mini{ display:none }
+    .hbtn{ padding:8px 13px; font-size:13px }
+    .hbtn span{ display:none }
     .creds{ columns:1 }
     .orgs{ grid-template-columns:1fr 1fr }
     .gift{ grid-template-columns:1fr }
@@ -171,8 +181,11 @@
 
 <header class="nav">
   <div class="wrap">
-    <img src="img/logo_blanco.png" alt="Sonofrecuencia · Musicoterapia Vibroacústica">
-    <a class="mini" href="#contacto">Agendar conversación</a>
+    <a href="https://sonofrecuencia.cl" class="logo" aria-label="Ir a sonofrecuencia.cl"><img src="img/logo_blanco.png" alt="Sonofrecuencia · Musicoterapia Vibroacústica"></a>
+    <nav class="acts">
+      <a class="hbtn" href="mailto:contacto@sonofrecuencia.cl?subject=CuidArte%20-%20Solicitud%20de%20informaci%C3%B3n">✉<span> Escribir</span></a>
+      <a class="hbtn solid" href="https://wa.me/56979913929?text=Hola%20Reinaldo%2C%20me%20interesa%20CuidArte%20para%20nuestro%20equipo." target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
   </div>
 </header>
 
@@ -208,7 +221,7 @@
     </div>
     <div class="grid g2" style="margin-top:40px">
       <p>La labor educativa tiene una alta carga emocional: jornadas extensas, situaciones de convivencia complejas y la responsabilidad diaria de acompañar a otros. <strong>CuidArte</strong> es una capacitación vivencial que entrega herramientas concretas de gestión emocional y autocuidado, aplicables desde el día siguiente.</p>
-      <p>Integra <strong>musicoterapia, ludoterapia, atención plena, movimiento consciente y artes expresivas</strong>. No es una charla: el equipo juega, toca instrumentos, se mueve, crea y se detiene a escucharse. No se requieren conocimientos previos y todo el equipamiento está incluido.</p>
+      <p>Integra <strong>musicoterapia, juego, técnicas corporales, atención plena y artes expresivas</strong>. No es una charla: el equipo juega, toca instrumentos, se mueve, crea y se detiene a escucharse. No se requieren conocimientos previos y todo el equipamiento está incluido.</p>
     </div>
     <div class="grid g4 ben" style="margin-top:32px">
       <div class="card"><h3>Autoconocimiento</h3><p>Mayor conciencia de los estados internos y las necesidades personales.</p></div>
@@ -233,26 +246,41 @@
   <div class="wrap">
     <div class="eyebrow">Programa</div>
     <h2>Dos formatos, <em>una misma experiencia</em></h2>
+    <div class="obj">
+      <p class="lead">Fortalecer en los equipos herramientas prácticas de <strong>gestión emocional y autocuidado</strong> mediante metodologías vivenciales, para favorecer el bienestar personal, el clima laboral y el ejercicio profesional.</p>
+      <div>
+        <span class="tag">Al finalizar, los participantes podrán</span>
+        <ol>
+          <li>Reconocer sus estados emocionales y cómo se expresan en el cuerpo.</li>
+          <li>Aplicar técnicas corporales y respiratorias breves para regular el estrés.</li>
+          <li>Inducir emociones placenteras, como alegría, ternura y calma, a través del cuerpo, el sonido y el arte.</li>
+          <li>Integrar un plan personal de autocuidado aplicable en lo cotidiano.</li>
+        </ol>
+      </div>
+    </div>
     <div class="grid g2">
       <div class="fmt">
         <div class="hd"><div><h3>Media jornada</h3><small>Ideal para consejos de profesores</small></div><span>4 h</span></div>
         <ul>
-          <li><i>15 min</i>Bienvenida y acuerdos para un espacio seguro</li>
-          <li><i>80 min</i><span><strong>Ludoterapia musical:</strong> juegos sonoros y rítmicos que despiertan alegría y conexión</span></li>
-          <li class="br"><i>15 min</i>Pausa</li>
-          <li><i>50 min</i><span><strong>Movimiento expresivo consciente:</strong> respiración, atención plena y cuerpo</span></li>
-          <li><i>75 min</i><span><strong>Artes expresivas y baño sonoro:</strong> improvisación, cuencos y cierre reflexivo</span></li>
+          <li><i>15 min</i><div><b>Apertura y ronda emocional</b>Encuadre, acuerdos de cuidado y reconocimiento de cómo llega el equipo.</div></li>
+          <li><i>75 min</i><div><b>Módulo 1 · Bienestar a través del juego</b>Juegos rítmicos y sonoros cooperativos que bajan la tensión, activan emociones placenteras y fortalecen el vínculo del equipo.<em>Herramienta: pausas lúdico-musicales para el aula y las reuniones.</em></div></li>
+          <li class="br"><i>15 min</i><div>Pausa</div></li>
+          <li><i>60 min</i><div><b>Módulo 2 · Cuerpo y emoción: herramientas de autorregulación</b>Respiración consciente, movimiento expresivo y técnicas inspiradas en el método Alba Emoting para reconocer, inducir y soltar estados emocionales.<em>Herramienta: rutina breve de regulación para momentos de estrés.</em></div></li>
+          <li><i>65 min</i><div><b>Módulo 3 · Artes expresivas y baño sonoro</b>Herramientas creativas para inducir emociones placenteras: improvisación musical, creación sonora y baño sonoro con cuencos tibetanos y de cuarzo.</div></li>
+          <li><i>10 min</i><div><b>Cierre</b>Compromiso personal de autocuidado.</div></li>
         </ul>
       </div>
       <div class="fmt">
-        <div class="hd"><div><h3>Jornada completa</h3><small>Ideal para jornadas de autocuidado</small></div><span>7 h</span></div>
+        <div class="hd"><div><h3>Jornada completa</h3><small>Ideal para jornadas de autocuidado · 09:00 a 17:00</small></div><span>7 h</span></div>
         <ul>
-          <li><i>15 min</i>Bienvenida y acuerdos para un espacio seguro</li>
-          <li><i>90 min</i><span><strong>Ludoterapia musical</strong> para el bienestar</span></li>
-          <li><i>120 min</i><span><strong>Movimiento expresivo consciente:</strong> yoga suave, respiración y mindfulness</span></li>
-          <li class="br"><i>60 min</i>Almuerzo</li>
-          <li><i>90 min</i><span><strong>Artes expresivas:</strong> cuentos y paisajes sonoros, creación colectiva</span></li>
-          <li><i>65 min</i><span><strong>Expresión plástica:</strong> mural colectivo de las emociones, compromisos y evaluación</span></li>
+          <li><i>15 min</i><div><b>Apertura y ronda emocional</b>Encuadre, acuerdos de cuidado y reconocimiento de cómo llega el equipo.</div></li>
+          <li><i>90 min</i><div><b>Módulo 1 · Bienestar a través del juego</b>Juegos rítmicos, sonoros y cooperativos que activan la alegría, la confianza y el sentido de equipo.<em>Herramienta: pausas lúdico-musicales.</em></div></li>
+          <li class="br"><i>15 min</i><div>Pausa</div></li>
+          <li><i>120 min</i><div><b>Módulo 2 · Cuerpo y emoción: alfabetización y regulación emocional</b>Las emociones básicas y su huella en el cuerpo; técnicas inspiradas en el método Alba Emoting para inducir alegría, ternura y calma y salir de estados emocionales intensos; respiración consciente, yoga suave y atención plena.<em>Herramienta: protocolo personal de regulación emocional.</em></div></li>
+          <li class="br"><i>60 min</i><div>Almuerzo</div></li>
+          <li><i>90 min</i><div><b>Módulo 3 · Artes expresivas para el bienestar</b>Herramientas creativas para inducir emociones placenteras: cuentos y paisajes sonoros, improvisación musical y creación colectiva.</div></li>
+          <li class="br"><i>15 min</i><div>Pausa</div></li>
+          <li><i>75 min</i><div><b>Módulo 4 · Integración y cuidado colectivo</b>Baño sonoro con cuencos, mural colectivo de las emociones, plan personal de autocuidado y evaluación.</div></li>
         </ul>
       </div>
     </div>
