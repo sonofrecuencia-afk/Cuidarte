@@ -55,12 +55,13 @@
   .acts{ display:flex; gap:10px }
   .hbtn{ display:inline-flex; align-items:center; gap:6px; padding:9px 18px; border-radius:30px; font-size:13.5px; font-weight:600; text-decoration:none; color:#fff; border:1.5px solid rgba(255,255,255,.55); transition:background .15s }
   .hbtn:hover{ background:rgba(255,255,255,.12) }
+  .hbtn.icon{ padding:8px 11px }
   .hbtn.solid{ background:var(--gold-soft); border-color:var(--gold-soft); color:var(--forest) }
   .hbtn.solid:hover{ background:#e6d3ae }
 
   /* hero */
   .hero{ position:relative; min-height:min(100vh, 880px); min-height:min(100svh, 880px); display:flex; align-items:flex-end; color:#fff; padding:140px 0 64px; overflow:hidden }
-  .hero > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover }
+  .hero > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 75% }
   .hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,30,18,.7) 0%, rgba(10,30,18,.25) 35%, rgba(10,30,18,.55) 60%, #0d2416 100%) }
   .hero .wrap{ position:relative; z-index:2 }
   .hero .eyebrow{ color:var(--gold-soft) }
@@ -183,6 +184,7 @@
   <div class="wrap">
     <a href="https://sonofrecuencia.cl" class="logo" aria-label="Ir a sonofrecuencia.cl"><img src="img/logo_blanco.png" alt="Sonofrecuencia · Musicoterapia Vibroacústica"></a>
     <nav class="acts">
+      <a class="hbtn icon" href="https://www.instagram.com/sonofrecuencia_musicoterapia/" target="_blank" rel="noopener" aria-label="Instagram de Sonofrecuencia"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a class="hbtn" href="mailto:contacto@sonofrecuencia.cl?subject=CuidArte%20-%20Solicitud%20de%20informaci%C3%B3n">✉<span> Escribir</span></a>
       <a class="hbtn solid" href="https://wa.me/56979913929?text=Hola%20Reinaldo%2C%20me%20interesa%20CuidArte%20para%20nuestro%20equipo." target="_blank" rel="noopener">WhatsApp</a>
     </nav>
@@ -190,7 +192,7 @@
 </header>
 
 <section class="hero">
-  <img src="img/hero.jpg" alt="Jornada CuidArte con cuencos tibetanos y globos">
+  <img src="img/hero.jpg" alt="Cuencos tibetanos en una jornada CuidArte">
   <div class="wrap">
     <div class="eyebrow">Bienestar y gestión emocional · Financiable vía SENCE</div>
     <h1>Cuid<em>Arte</em></h1>
@@ -217,7 +219,7 @@
         <h2>Cuidar a quienes <em>educan</em></h2>
         <p class="lead">Cuando el equipo está bien, se nota en el aula. Un equipo que se cuida comunica mejor, convive mejor y sostiene con más energía el trabajo con niños, niñas, jóvenes y familias.</p>
       </div>
-      <img src="img/grupo.jpg" alt="Equipo participante de una jornada CuidArte" loading="lazy">
+      <img src="img/grupo.jpg" alt="Participantes tocando instrumentos en una jornada CuidArte" loading="lazy">
     </div>
     <div class="grid g2" style="margin-top:40px">
       <p>La labor educativa tiene una alta carga emocional: jornadas extensas, situaciones de convivencia complejas y la responsabilidad diaria de acompañar a otros. <strong>CuidArte</strong> es una capacitación vivencial que entrega herramientas concretas de gestión emocional y autocuidado, aplicables desde el día siguiente.</p>
