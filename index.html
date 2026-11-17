@@ -82,6 +82,11 @@
 
   .video{ position:relative; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#000; box-shadow:0 20px 60px rgba(0,0,0,.35) }
   .video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0 }
+  .videos{ display:grid; grid-template-columns:minmax(240px,320px) 1fr; gap:28px; align-items:center }
+  .vertical{ aspect-ratio:9/16; border-radius:12px; overflow:hidden; background:#000; box-shadow:0 20px 60px rgba(0,0,0,.35) }
+  .vertical video{ width:100%; height:100%; object-fit:cover; display:block }
+  .vcap{ font-size:14px; margin-top:10px; opacity:.85; text-align:center }
+  @media (max-width:820px){ .videos{ grid-template-columns:1fr } .videos > div:first-child{ max-width:340px; width:100%; margin:0 auto } }
 
   /* program */
   .fmt{ background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden }
@@ -239,8 +244,17 @@
   <div class="wrap">
     <div class="eyebrow" style="color:var(--gold-soft)">Véalo en acción</div>
     <h2>Así se vive <em>CuidArte</em></h2>
-    <p class="lead muted" style="margin-bottom:28px">Fragmentos de jornadas reales con equipos educativos y profesionales.</p>
-    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/pI4l8uUs3Ak?rel=0" title="CuidArte · Bienestar y autocuidado para comunidades educativas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <p class="lead muted" style="margin-bottom:28px">En 48 segundos, qué es CuidArte; y fragmentos de jornadas reales con equipos educativos y profesionales.</p>
+    <div class="videos">
+      <div>
+        <div class="vertical"><video id="video-que-es" src="video/que-es-cuidarte.mp4" poster="video/que-es-cuidarte.jpg" controls preload="none" playsinline title="¿Qué es CuidArte? Bienestar a través de la música, el juego, el cuerpo y el arte"></video></div>
+        <p class="vcap">¿Qué es CuidArte? · 48 s</p>
+      </div>
+      <div>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/pI4l8uUs3Ak?rel=0" title="CuidArte · Bienestar y autocuidado para comunidades educativas" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <p class="vcap">Así se vive una jornada</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -421,6 +435,11 @@
     document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (a) { a.setAttribute('data-goatcounter-click', 'whatsapp' + suf); });
     document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) { a.setAttribute('data-goatcounter-click', 'correo' + suf); });
     document.querySelectorAll('a[href$=".pdf"]').forEach(function (a) { a.setAttribute('data-goatcounter-click', 'brochure' + suf); });
+    var v = document.getElementById('video-que-es');
+    if (v) v.addEventListener('play', function once() {
+      v.removeEventListener('play', once);
+      if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'video-que-es-cuidarte' + suf, title: 'Video ¿Qué es CuidArte?', event: true });
+    });
   })();
 </script>
 <script>window.goatcounter = { path: function (p) { return location.host + p } };</script>
